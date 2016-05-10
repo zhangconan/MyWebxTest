@@ -1,0 +1,6 @@
+$page.setTitle("城市二级联动")
+<select name="cityLink">
+	#foreach($province in $!{provinceChina})
+		<option value="$!{province.ename}">$!{province.cname}</option>
+	#end
+</select>

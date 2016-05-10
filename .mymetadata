@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="MyWebxTest"
+  id="myeclipse.1457370614571"
+  context-root="/MyWebxTest"
+  j2ee-spec="6.0"
+  archive="MyWebxTest.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+
