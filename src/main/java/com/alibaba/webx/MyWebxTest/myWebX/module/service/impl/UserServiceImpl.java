@@ -30,6 +30,11 @@ public class UserServiceImpl implements UserService {
 
 		return userDao.getUserInfo(id);
 	}
+	@Override
+	public UserDO getuserMuliTest(int id) {
+
+		return userDao.getuserMuliTest(id);
+	}
 
 	public UserDao getUserDao() {
 		return userDao;
@@ -38,5 +43,4 @@ public class UserServiceImpl implements UserService {
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}
-	
 }

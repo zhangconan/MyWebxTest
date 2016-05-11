@@ -16,12 +16,16 @@ public interface UserService {
 	 * @return
 	 */
 	public int insertUser(UserDO userDo);
-
 	/**
 	 * 获取表中的信息
 	 * @param id
 	 * @return
      */
 	public UserDO getUserInfo(int id);
-
+	/**
+	 *测试一对多级联关系
+	 * @param id
+	 * @return
+	 */
+	public UserDO getuserMuliTest(int id);
 }

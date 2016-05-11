@@ -29,5 +29,9 @@ public class TestServiceNew extends BaseTest {
 
         UserDO user = userService.getUserInfo(2);
         System.out.println(user.getUserName()+user.getPassWord());
+
+        UserDO userDO = userService.getuserMuliTest(2);
+        System.out.println(userDO.getUserMuli().size());
+
     }
 }

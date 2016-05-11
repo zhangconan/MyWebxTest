@@ -24,7 +24,13 @@ public class UserDaoImpl extends AbstractDao implements UserDao{
 
 	@Override
 	public UserDO getUserInfo(int id) {
-		return getSqlSession().selectOne("userMapper.getUserInfo",id);
+		return getSqlSession().selectOne("userMapper.getUserInfo", id);
+	}
+
+	@Override
+	public UserDO getuserMuliTest(int id) {
+
+		return getSqlSession().selectOne("userMapper.getMumiUser",id);
 	}
 
 }

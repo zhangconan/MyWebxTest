@@ -3,11 +3,12 @@
 <configuration>  
 	<!-- 配置实体类 -->
 	<typeAliases>
-		<typeAlias alias="userdo" type="com.alibaba.webx.MyWebxTest.myWebX.module.dao.object.UserDO"/>
-		<typeAlias type="com.alibaba.webx.MyWebxTest.myWebX.module.dao.object.UserMuliDo" alias="userMuliDo" />
+		<typeAlias alias="userdo" type="com.alibaba.webx.MyWebxTest.myWebX.module.dao.object.UserDO"/>		<typeAlias alias="userMuliDo" type="com.alibaba.webx.MyWebxTest.myWebX.module.dao.object.UserMuliDo"/>
+		<typeAlias alias="cityChinaDO" type="com.alibaba.webx.MyWebxTest.myWebX.module.dao.object.CityChinaDO"/>
 	</typeAliases>
 	<!-- 配置MyBatis 文件 -->
     <mappers>  
     	<mapper resource="com/alibaba/webx/MyWebxTest/myWebX/module/dao/user.xml"/>
+    	<mapper resource="com/alibaba/webx/MyWebxTest/myWebX/module/dao/chinaCity.xml"/>
     </mappers>  
 </configuration>  

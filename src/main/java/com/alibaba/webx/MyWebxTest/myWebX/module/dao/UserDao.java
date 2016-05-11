@@ -23,4 +23,10 @@ public interface UserDao {
 	 * @return
      */
 	public UserDO getUserInfo(int id);
+	/**
+	 *测试一对多级联关系
+	 * @param id
+	 * @return
+	 */
+	public UserDO getuserMuliTest(int id);
 }
