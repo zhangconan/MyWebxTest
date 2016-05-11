@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="userMapper">
+	<!-- 插入操作 -->
+	<insert id="insertUser" parameterType="userdo">
+		insert user (userName,passWord) values (#{userName,jdbcType=VARCHAR},#{passWord,jdbcType=VARCHAR})
+	</insert>
+	<select id="getUserInfo" parameterType="int" resultType="userdo">
+			select * from user where id = #{id}
+	</select>
+
+	<select id="getMumiUser" parameterType="int" resultMap="userdoMap">
+		select id,username,password from user where id = #{id}
+	</select>
+	<select id="userMuliTest" parameterType="int" resultType="userMuliDo">
+		select id,memo from user_test where id = #{id}
+	</select>
+	<resultMap id="userdoMap" type="userdo">
+		<result column="id" property="id"/>
+		<result column="username" property="userName" />
+		<result column="password" property="passWord" />
+		<collection property="userMuli" column="id" select="userMapper.userMuliTest"/>
+	</resultMap>
+</mapper>

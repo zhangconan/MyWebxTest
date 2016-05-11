@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+	default-autowire="byName">
+	<!-- Service层 -->
+	<bean name="userService" class="com.alibaba.webx.MyWebxTest.myWebX.module.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"/>
+	</bean>
+	<!-- DAO层 -->
+	<bean name="userDao" class="com.alibaba.webx.MyWebxTest.myWebX.module.dao.impl.UserDaoImpl">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	<!-- 配置数据源     使用了连接池的东西 -->
+	<bean name="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+			<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+			<property name="url" value="jdbc:mysql://localhost:3306/zkn?useUnicode=true&amp;characterEncoding=UTF-8"></property>
+			<property name="username" value="root"></property>
+			<property name="password" value="11111111"></property>
+			<property name="minIdle" value="0" ></property>
+       		<property name="maxWait" value="-1"></property>
+	</bean>
+	<!-- Spring管理数据源 -->
+	<bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<!-- 事务管理 -->
+	<bean name="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager" ref="transactionManager"></property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="delete*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="add*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="insert*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="update*">PROPAGATION_REQUIRED,-Exception</prop>
+			</props>
+		</property>
+	</bean>
+	<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+		<!-- Service 层  -->
+			<list>
+				<value>userService</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 配置MyBatis -->
+	<bean name="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation" value="classpath:sqlmap-config.xml"></property>
+	</bean>
+	
+</beans>

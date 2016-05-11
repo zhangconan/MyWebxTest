@@ -1,0 +1,35 @@
+$page.setTitle("Welcome,$name")
+<script type="text/javascript">
+	function testFun(){
+		alert("点击我");
+		document.getElementsByName("textFun")[0].value = "我被点击了";
+	}
+</script>
+<p>Welcome,$name</p>
+#set($directoryRoot="wwww")
+#set($templateNamr="dddd")
+#set($template = "$directoryRoot/$templateNamr")
+$template<br>
+
+#set($testArray = ["222","dddd","eeeee"])
+#set($testArray01 = ["qqqqq","wwww","ddddd"])
+#foreach($element in $testArray)
+	#foreach($key in $testArray01)
+		$key的值是多少
+	#end
+	$velocityCount this is $element<br>
+#end
+
+#set($contion01 = "1222")
+#if($contion01 == "1266")
+	条件循环 if
+#else
+	条件循环 else
+#end
+
+\\$email
+\\\$email
+<form>
+	<input type="button" name="textFun" value="点击我" onClick="testFun()"/>
+<form>
+

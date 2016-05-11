@@ -1,0 +1,32 @@
+$page.setTitle("文件上传页面")
+<script type="text/javascript">
+    function doClick(){
+        document.getElementsByName("fileUploadName")[0].value = document.getElementsByName("fileUpload")[0].value
+    }
+</script>
+<p>文件上传页面</p>
+<form action="" method="post" enctype="multipart/form-data">
+    $csrfToken.hiddenField
+    #set($group = $form.testRegister.defaultInstance)
+    <input type="hidden" name="action" value="file_uploadAction"/>
+    <table>
+        <tr>
+            <td>姓名：</td>
+            <td><input type="text" id="userName" name="userName" value="$!userName" /></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="text" name="passWord" id="passWord" value="$!passWord"/></td>
+        </tr>
+        <tr>
+            <td>文件上传</td>
+            <td><input type="text" name="fileUploadName" value="$!fileUploadName" >
+                <input type="file" name="fileUpload" onchange="doClick()"/></td>
+        </tr>
+        <tr>
+        	<td><input type="submit" value="提交" name="event_submit_do_upload"></td>
+        	<td><input type="reset" value="重置"></td>
+        </tr>
+    </table>
+
+</form>
