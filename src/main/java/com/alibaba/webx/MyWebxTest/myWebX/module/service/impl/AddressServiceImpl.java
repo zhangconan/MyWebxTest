@@ -4,6 +4,7 @@ import com.alibaba.webx.MyWebxTest.myWebX.module.dao.CityDao;
 import com.alibaba.webx.MyWebxTest.myWebX.module.dao.object.CityChinaDO;
 import com.alibaba.webx.MyWebxTest.myWebX.module.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class AddressServiceImpl implements AddressService{
 	 */
     @Override
     public List<CityChinaDO> getAllCityByEname(String ecityName) {
+    	
         return cityDao.getAllCityByEname(ecityName);
     }
     /**
@@ -29,6 +31,14 @@ public class AddressServiceImpl implements AddressService{
      */
     @Override
     public List<CityChinaDO> getAllProvince() {
-    	return null;
+    	
+    	return cityDao.getAllProvince();
     }
+    
+	public CityDao getCityDao() {
+		return cityDao;
+	}
+	public void setCityDao(CityDao cityDao) {
+		this.cityDao = cityDao;
+	}
 }

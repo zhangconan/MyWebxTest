@@ -15,10 +15,10 @@ public class CityDaoImpl extends AbstractDao implements CityDao{
 	 * @return
 	 */
     @Override
-    public List<CityChinaDO> getAllCityByEname(String ecityName) {
+    public List<CityChinaDO> getAllCityByEname(String ename) {
     	
     	List<CityChinaDO> cityChinaList = 
-    			getSqlSession().selectList("chinaCityMapper.getCityByEname", ecityName);
+    			getSqlSession().selectList("chinaCityMapper.getCityByEname", ename);
         return cityChinaList;
     }
     /**

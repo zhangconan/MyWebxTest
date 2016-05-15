@@ -5,4 +5,8 @@ $page.setTitle("默认页面")
 		#set($url="$app1Link.setTarget('myregister.htm')")
 		<a href="$url" >$url</a>
 	</li>
+	<li>
+		#set($url="$app1Link.setTarget('chinaCity.htm')")
+		<a href="$url">$url</a>
+	</li>
 </ol>

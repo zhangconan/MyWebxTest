@@ -6,7 +6,7 @@
 		select id,ename,cname from province_china 
 	</select>
 	<!-- 得到省下面所有市的信息 -->
-	<select id="getCityByEname" parameterType="string" resultType="cityChinaDO">
-		select id,ename,ecityName,ccityName from city_china where ename = #value#
+	<select id="getCityByEname" parameterType="java.lang.String" resultType="cityChinaDO">
+		select id,ename,ecityName,ccityName from city_china where ename = #{value}#
 	</select>
 </mapper>

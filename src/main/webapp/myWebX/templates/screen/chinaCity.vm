@@ -1,6 +1,39 @@
 $page.setTitle("城市二级联动")
-<select name="cityLink">
+<script type="text/javascript" src="static/js/jquery-2.1.4.min.js"></script>
+<select name="provinceEname">
+	<option>请选择</option>
 	#foreach($province in $!{provinceChina})
 		<option value="$!{province.ename}">$!{province.cname}</option>
 	#end
 </select>
+<select name="cityEname">
+	<option>请选择</option>
+</select>
+<script>
+$(function(){
+	<!--城市二级联动-->
+	$("select[name='provinceEname']").on('change',function(){
+		var cityVal = $(this).val();
+		$.ajax({
+			type:"post",
+			data:{"cityEname":cityVal},
+			dataType:"json",
+			url:"getCityByProvinceEname.do",
+			success:function(msg){
+				if(msg != "{}"){
+					$("select[name='cityEname']").empty();
+					for(var i=0;i<msg.length;i++){
+						$("select[name='cityEname']").append("<option value='"+msg[i].id+"'>"+msg[i].name+"</option>");
+					}
+				}else{
+					
+				}
+			},
+			error:function(){
+				alert("请求错误!");
+			}
+		}); 
+	});
+}	
+);
+</script>

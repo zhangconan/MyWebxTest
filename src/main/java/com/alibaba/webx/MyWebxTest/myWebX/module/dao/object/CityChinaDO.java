@@ -23,7 +23,7 @@ public class CityChinaDO {
     /**
      * 城市名称
      */
-    private String cciteName;
+    private String ccityName;
 
     public Integer getId() {
         return id;
@@ -57,11 +57,11 @@ public class CityChinaDO {
         this.ecityName = ecityName;
     }
 
-    public String getCciteName() {
-        return cciteName;
+    public String getCcityName() {
+        return ccityName;
     }
 
-    public void setCciteName(String cciteName) {
-        this.cciteName = cciteName;
+    public void setCcityName(String ccityName) {
+        this.ccityName = ccityName;
     }
 }
