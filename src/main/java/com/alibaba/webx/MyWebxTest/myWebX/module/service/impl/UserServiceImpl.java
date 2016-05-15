@@ -11,6 +11,7 @@ import com.alibaba.webx.MyWebxTest.myWebX.module.service.UserService;
  * @author zkn
  *
  */
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
 	private UserDao userDao;
@@ -29,7 +30,6 @@ public class UserServiceImpl implements UserService {
 
 		return userDao.getUserInfo(id);
 	}
-
 	@Override
 	public UserDO getuserMuliTest(int id) {
 
@@ -43,7 +43,4 @@ public class UserServiceImpl implements UserService {
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}
-
-
-
 }

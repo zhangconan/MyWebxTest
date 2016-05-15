@@ -32,5 +32,6 @@ public class TestServiceNew extends BaseTest {
 
         UserDO userDO = userService.getuserMuliTest(2);
         System.out.println(userDO.getUserMuli().size());
+
     }
 }

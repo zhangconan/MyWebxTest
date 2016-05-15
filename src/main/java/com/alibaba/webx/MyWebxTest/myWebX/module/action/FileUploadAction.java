@@ -27,7 +27,9 @@ public class FileUploadAction {
     private ParserRequestContext parserContext;
 
     public void doUpload(@Param("userName") String name, Context context, Navigator na) {
+        //获取用户名
         String userName = request.getParameter("userName");
+        //获取密码
         String passWord = request.getParameter("passWord");
         System.out.println("userName:"+userName+"   passWord:"+passWord);
         //Webx实现文件上传

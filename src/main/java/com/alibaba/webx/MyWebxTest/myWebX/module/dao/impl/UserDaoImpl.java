@@ -24,7 +24,6 @@ public class UserDaoImpl extends AbstractDao implements UserDao{
 
 	@Override
 	public UserDO getUserInfo(int id) {
-
 		return getSqlSession().selectOne("userMapper.getUserInfo", id);
 	}
 

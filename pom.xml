@@ -317,7 +317,11 @@
 				<artifactId>tomcat-maven-plugin</artifactId>
 				<version>1.0-beta-1</version>
 				<configuration>
+<<<<<<< HEAD
 					<port>8080</port>
+=======
+				<port>8089</port> 
+>>>>>>> d1ba4f62d89fa090f5ad5c63e1abbba1d8d0c9b7
 				</configuration>
 			</plugin>
 		</plugins>

@@ -2,5 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+<<<<<<< HEAD
+    <mapping directory="$PROJECT_DIR$/../../SourceCode/TomCat6" vcs="svn" />
+=======
+>>>>>>> f196cd04a2d348d4a831d56537ffbaa65774e0d0
   </component>
 </project>
