@@ -1,29 +1,47 @@
 $page.setTitle("城市二级联动")
 <script type="text/javascript" src="static/js/jquery-2.1.4.min.js"></script>
-<select name="provinceEname">
+<select name="provinceEname_fir">
 	<option>请选择</option>
 	#foreach($province in $!{provinceChina})
 		<option value="$!{province.ename}">$!{province.cname}</option>
 	#end
 </select>
-<select name="cityEname">
+<select name="cityEname_fir">
 	<option>请选择</option>
 </select>
+<br/>
+<select name="provinceEname_sec">
+	<option>请选择</option>
+	#foreach($province in $!{provinceChina})
+		<option value="$!{province.ename}">$!{province.cname}</option>
+	#end
+</select>
+<select name="cityEname_sec">
+	<option>请选择</option>
+</select>
+
 <script>
 $(function(){
 	<!--城市二级联动-->
-	$("select[name='provinceEname']").on('change',function(){
+	$("select[name^='provinceEname']").each(function(j){
+		$(this).on('change',function(){
 		var cityVal = $(this).val();
+		var uri = "";
+		if(j==0){
+			uri = "getCityByProvinceEname.do";
+		}else if(j==1){
+			uri = "get_city_by_province_name/china_city.json";
+		}
 		$.ajax({
 			type:"post",
 			data:{"cityEname":cityVal},
 			dataType:"json",
-			url:"getCityByProvinceEname.do",
+			url:uri,
 			success:function(msg){
 				if(msg != "{}"){
-					$("select[name='cityEname']").empty();
+					$($("select[name^='cityEname']")[j]).empty();
 					for(var i=0;i<msg.length;i++){
-						$("select[name='cityEname']").append("<option value='"+msg[i].id+"'>"+msg[i].name+"</option>");
+						$($("select[name^='cityEname']")[j]).append("<option value='"+msg[i].id+"'>"+msg[i].name+"</option>");
 					}
 				}else{
 					
@@ -33,6 +51,7 @@ $(function(){
 				alert("请求错误!");
 			}
 		}); 
+		})
 	});
 }	
 );
