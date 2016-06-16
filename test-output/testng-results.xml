@@ -2,15 +2,49 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="41861" started-at="2016-05-31T09:42:17Z" finished-at="2016-05-31T09:42:59Z">
+  <suite name="Default suite" duration-ms="884" started-at="2016-06-16T10:00:58Z" finished-at="2016-06-16T10:00:59Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="41861" started-at="2016-05-31T09:42:17Z" finished-at="2016-05-31T09:42:59Z">
+    <test name="Default test" duration-ms="884" started-at="2016-06-16T10:00:58Z" finished-at="2016-06-16T10:00:59Z">
       <class name="com.alibaba.webx.MyWebxTest.myWebX.module.service.impl.AddressServiceImplTest">
-        <test-method status="PASS" signature="getAllProvince()[pri:0, instance:com.alibaba.webx.MyWebxTest.myWebX.module.service.impl.AddressServiceImplTest@37271612]" name="getAllProvince" duration-ms="41843" started-at="2016-05-31T17:42:17Z" finished-at="2016-05-31T17:42:59Z">
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:com.alibaba.webx.MyWebxTest.myWebX.module.service.impl.AddressServiceImplTest@2aa5fe93]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="7" started-at="2016-06-16T18:00:58Z" finished-at="2016-06-16T18:00:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.alibaba.webx.MyWebxTest.myWebX.module.service.impl.AddressServiceImplTest@2aa5fe93]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="541" started-at="2016-06-16T18:00:58Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2016-06-16T18:00:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.alibaba.webx.MyWebxTest.myWebX.module.service.impl.AddressServiceImplTest@2aa5fe93]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="22" started-at="2016-06-16T18:00:58Z" finished-at="2016-06-16T18:00:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.alibaba.webx.MyWebxTest.myWebX.module.service.impl.AddressServiceImplTest.getAllProvince()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="getAllProvince()[pri:0, instance:com.alibaba.webx.MyWebxTest.myWebX.module.service.impl.AddressServiceImplTest@2aa5fe93]" name="getAllProvince" duration-ms="301" started-at="2016-06-16T18:00:58Z" finished-at="2016-06-16T18:00:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getAllProvince -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.alibaba.webx.MyWebxTest.myWebX.module.service.impl.AddressServiceImplTest@2aa5fe93]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2016-06-16T18:00:59Z" finished-at="2016-06-16T18:00:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.alibaba.webx.MyWebxTest.myWebX.module.service.impl.AddressServiceImplTest.getAllProvince()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.alibaba.webx.MyWebxTest.myWebX.module.service.impl.AddressServiceImplTest@2aa5fe93]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2016-06-16T18:00:59Z" finished-at="2016-06-16T18:00:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
       </class> <!-- com.alibaba.webx.MyWebxTest.myWebX.module.service.impl.AddressServiceImplTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

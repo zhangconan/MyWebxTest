@@ -1,5 +1,6 @@
 $page.setTitle("城市二级联动")
 <script type="text/javascript" src="static/js/jquery-2.1.4.min.js"></script>
+第一种Ajax方式
 <select name="provinceEname_fir">
 	<option>请选择</option>
 	#foreach($province in $!{provinceChina})
@@ -9,7 +10,9 @@ $page.setTitle("城市二级联动")
 <select name="cityEname_fir">
 	<option>请选择</option>
 </select>
+<input type="hidden" value="getCityByProvinceEname.do" name="urlName_fir">
 <br/>
+第二种Ajax方式
 <select name="provinceEname_sec">
 	<option>请选择</option>
 	#foreach($province in $!{provinceChina})
@@ -19,19 +22,38 @@ $page.setTitle("城市二级联动")
 <select name="cityEname_sec">
 	<option>请选择</option>
 </select>
-
+<input type="hidden" value="get_city_by_province_name/china_city.json" name="urlName_sec">
+<br/>
+第三种Ajax方式
+<select name="provinceEname_thir">
+	<option>请选择</option>
+	#foreach($province in $!{provinceChina})
+		<option value="$!{province.ename}">$!{province.cname}</option>
+	#end
+</select>
+<select name="cityEname_thir">
+	<option>请选择</option>
+</select>
+<input type="hidden" value="get_city_by_province_name_thir.json" name="urlName_thir">
+<br/>
+第四种Ajax方式
+<select name="provinceEname_four">
+	<option>请选择</option>
+	#foreach($province in $!{provinceChina})
+		<option value="$!{province.ename}">$!{province.cname}</option>
+	#end
+</select>
+<select name="cityEname_four">
+	<option>请选择</option>
+</select>
+<input type="hidden" value="get_city_by_province_name_four.htm" name="urlName_four">
 <script>
 $(function(){
 	<!--城市二级联动-->
 	$("select[name^='provinceEname']").each(function(j){
 		$(this).on('change',function(){
 		var cityVal = $(this).val();
-		var uri = "";
-		if(j==0){
-			uri = "getCityByProvinceEname.do";
-		}else if(j==1){
-			uri = "get_city_by_province_name/china_city.json";
-		}
+		var uri = $($("input[name^='urlName']")[j]).val();
 		$.ajax({
 			type:"post",
 			data:{"cityEname":cityVal},

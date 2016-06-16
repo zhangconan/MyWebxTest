@@ -3,6 +3,7 @@ package com.alibaba.webx.MyWebxTest.myWebX.module.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.testng.annotations.Test;
 
 import com.alibaba.webx.MyWebxTest.myWebX.module.dao.CityDao;
@@ -11,11 +12,12 @@ import com.alibaba.webx.MyWebxTest.myWebX.module.dao.object.CityChinaDO;
 
 import mockit.Injectable;
 
-public class AddressServiceImplTest {
+public class AddressServiceImplTest extends AbstractTestNG{
 
 	@Injectable
 	private UserDao userDao;
-	@Injectable
+	@Autowired
+	@Qualifier("cityDao")
 	private CityDao cityDao;
 
 	@Test
@@ -26,7 +28,7 @@ public class AddressServiceImplTest {
 	@Test
 	public void getAllProvince() {
 		List<CityChinaDO> listCity = cityDao.getAllProvince();
-		System.out.println(listCity.size());
+		System.out.println("省分的数量"+listCity.size());
 	}
 
 	@Test

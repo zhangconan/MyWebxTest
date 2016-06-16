@@ -13,13 +13,13 @@ import com.alibaba.webx.MyWebxTest.myWebX.module.dao.object.CityChinaDO;
 
 /**
  * 
- * @author zkn 2016-05-15
+ * @author zkn
  *
  */
 
-public class GetCityByProvinceName extends BaseScreenAction {
+public class GetCityByProvinceNameFour extends BaseScreenAction {
 
-	public void doChinaCity(@Param("cityEname") String cityEname, Context context){
+	public void execute(@Param("cityEname") String cityEname, Context context){
 		List<CityChinaDO> listCity = 
 				mainService.getAddressService().getAllCityByEname(cityEname);
 		List<Map<String, String>> list = new ArrayList<Map<String, String>>();

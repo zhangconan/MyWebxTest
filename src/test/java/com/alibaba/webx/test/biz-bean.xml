@@ -9,10 +9,14 @@
 	<bean name="userService" class="com.alibaba.webx.MyWebxTest.myWebX.module.service.impl.UserServiceImpl">
 		<property name="userDao" ref="userDao"/>
 	</bean>
+	<bean name="addressService" class="com.alibaba.webx.MyWebxTest.myWebX.module.service.impl.AddressServiceImpl">
+		<property name="cityDao" ref="cityDao"/>
+	</bean>
 	<!-- DAO层 -->
 	<bean name="userDao" class="com.alibaba.webx.MyWebxTest.myWebX.module.dao.impl.UserDaoImpl">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	</bean>
+	<bean name="cityDao" class="com.alibaba.webx.MyWebxTest.myWebX.module.dao.impl.CityDaoImpl"/>
 	<!-- 配置数据源     使用了连接池的东西 -->
 	<bean name="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 			<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
