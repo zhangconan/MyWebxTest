@@ -1,19 +1,29 @@
-$page.setTitle("城市二级联动")
+$page.setTitle("下载文件")
 <html>
 <head>
 <script type="text/javascript" src="static/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
+alert('zhangsanlisi');
 function doDownLoad(fileName){
-	$("input[name='fileName']").val(fileName);
+	//$("input[name='fileName']").val(fileName);
+	//$("#fileForm").submit();
+	//$("#fileForm").action="file_load.do";
+	$('#showValue').val('zhangsanlisi');
 	$("#fileForm").submit();
+	//window.open('file_load.do');
 }
 </script>
 </head>
 <body>
-	<form id="fileForm" method="post" action="">
+	<form id="fileForm" method="post" action="file_load.do">
+		<input type="hidden" name="fileName" />
+	</form>
+	#*<form id="fileForm" method="post" action="">
 		<input type="hidden" name="fileName" />
 		<input type="hidden" name="action" value="down_load_fileAction" />
 	</form>
+	*#
+	<input id="showValue" />
 	<table>
 		<tr>
 			<td>文件1</td>
